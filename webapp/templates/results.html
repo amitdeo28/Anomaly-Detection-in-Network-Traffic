@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detected Anomalies</h1>
+
+        {% if total_anomalies > 0 %}
+            <p>🔍 <strong>Total Anomalies Detected:</strong> {{ total_anomalies }}</p>
+            <p>📊 Showing first 20 detected anomalies.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            {% for col in table_data[0].keys() %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table_data %}
+                        <tr>
+                            {% for col, value in row.items() %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>✅ No anomalies detected in the dataset.</p>
+        {% endif %}
+
+        <!-- Download Report Button -->
+        <br><br>
+        <a href="{{ file_url }}" class="btn">📥 Download Full Anomaly Report</a>
+
+        <!-- "Go Back" Button -->
+        <br><br>
+        <a href="{{ url_for('index') }}" class="btn back-btn">🔄 Go Back to Upload Page</a>
+    </div>
+</body>
+</html>

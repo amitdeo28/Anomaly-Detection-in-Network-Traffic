@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 90%;
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    background: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    background: green;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.back-btn {
+    background: #555;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+.table-container {
+    max-height: 400px;  /* Restrict height */
+    overflow-y: auto;   /* Enable vertical scrolling */
+    overflow-x: auto;   /* Enable horizontal scrolling */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Prevents wide columns */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    word-wrap: break-word; /* Wrap text inside columns */
+    font-size: 14px; /* Reduce font size */
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
